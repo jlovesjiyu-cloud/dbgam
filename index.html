@@ -145,7 +145,25 @@ body {
 
 </head>
 <body>
+<script>
+  // 페이지가 열리자마자 바로 실행
+  (function() {
+    const userCode = prompt("대외비 문서입니다. 입장 코드를 입력하세요:");
 
+    // 사용자가 입력한 값의 앞뒤 공백을 자동으로 없애주는 처리(.trim())를 넣었어!
+    if (userCode && userCode.trim() === "7700") {
+      alert("인증 성공!");
+    } else if (userCode === null) {
+      // 취소 버튼을 누른 경우
+      alert("코드를 입력해야 입장할 수 있습니다.");
+      window.location.href = "about:blank";
+    } else {
+      // 코드를 틀렸거나 그냥 확인을 누른 경우
+      alert("올바르지 않은 코드입니다. 접근 권한이 없습니다.");
+      window.location.href = "about:blank";
+    }
+  })();
+</script>
 <div class="sidebar">
   <h2>목 차(클릭 시 이동!)</h2>
   
