@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta property="og:type" content="website">
@@ -145,6 +145,119 @@ body {
     text-align: left !important;
     padding: 10px 12px !important;
 }
+/* 사이드바 하단 구분선 & 메뉴 버튼 */
+.sidebar-divider { border: 0; height: 1px; background: rgba(255, 255, 255, 0.1); margin: 15px 20px; }
+.sidebar-bottom-menu { margin-top: auto; padding-bottom: 20px; }
+
+/* 🟢 [보테가 그린] 명품 감성의 세련되고 강렬한 초록색 FAQ 메뉴 */
+.faq-search-menu {
+    display: flex; 
+    align-items: center; 
+    padding: 14px 24px;       
+    color: #ffffff !important; /* 마우스 안 올려도 쨍한 완전 생화이트 */
+    font-weight: 900;         
+    font-size: 16px;          
+    cursor: pointer; 
+    transition: all 0.25s ease-in-out;
+    
+    /* 💡 [컬러 변경] 어두운 사이드바에서 독보적으로 빛나는 보테가 그린 적용! */
+    background: #00b44e !important; /* 칙칙함 없는 완벽한 명품 비비드 그린 */
+    box-shadow: 0 4px 14px rgba(0, 180, 78, 0.35); /* 은은하고 고급스러운 그린 네온 불빛 발사 */
+    
+    border-radius: 8px;
+    margin: 10px 15px;        
+}
+
+/* 🚨 마우스 올리기 전 FAQ 아이콘 스타일 */
+.faq-search-menu .nav-icon { 
+    font-size: 20px;          
+    margin-right: 12px; 
+    color: #ffffff !important; /* 깔끔하게 '순백색'으로 맞춰서 세련미 폭발! */
+    transition: all 0.25s ease-in-out; 
+}
+
+/* ===================================================
+   🔥 마우스를 올렸을 때(Hover) 짜릿한 색상 역전 효과!
+=================================================== */
+.faq-search-menu:hover { 
+    color: #00b44e !important; /* 마우스 올리면 글씨가 보테가 그린으로 변하고 */
+    background: #ffffff !important; /* 배경이 하얗게 뒤집어짐! */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2); 
+}
+
+/* 마우스 올리면 아이콘도 메인 보테가 그린으로 체인지 */
+.faq-search-menu:hover .nav-icon { 
+    color: #00b44e !important; 
+    transform: scale(1.15) rotate(-5deg); /* 통통 튀는 애니메이션 그대로 유지 */
+}===================================================
+   🔥 마우스를 올렸을 때(Hover) 짜릿한 색상 역전 효과!
+=================================================== */
+.faq-search-menu:hover { 
+    color: #10b981 !important; /* 마우스 올리면 글씨가 상큼한 초록색으로 변하고 */
+    background: #ffffff !important; /* 배경이 하얗게 뒤집어짐! */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2); 
+}
+
+/* 마우스 올리면 아이콘도 메인 초록색으로 체인지 */
+.faq-search-menu:hover .nav-icon { 
+    color: #10b981 !important; 
+    transform: scale(1.15) rotate(-5deg); 
+}
+
+/* /* ===================================================
+   💡 FAQ 정밀 팝업창 (모달 모드) 디자인 [보테가 그린 패치판]
+=================================================== */
+.faq-modal {
+    display: none; position: fixed; z-index: 9999; left: 0; top: 0;
+    width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.6); /* 딥한 다크 투명 배경 */
+    backdrop-filter: blur(4px); /* 고급스러운 뒷배경 흐림 효과 */
+    align-items: center; justify-content: center;
+}
+.faq-modal-content {
+    background-color: #ffffff; padding: 30px; border-radius: 16px;
+    width: 90%; max-width: 650px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    animation: slideUp 0.3s ease-out; /* 등장 팝업 애니메이션 */
+}
+@keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.faq-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.faq-modal-header h2 { font-size: 20px; color: #1e293b; font-weight: 700; margin: 0; }
+.faq-modal-close { font-size: 28px; font-weight: bold; color: #94a3b8; cursor: pointer; transition: color 0.2s; }
+.faq-modal-close:hover { color: #64748b; }
+
+/* 팝업 상단 초정밀 검색창 (보테가 그린 포인트) */
+.faq-search-box-wrap { position: relative; margin-bottom: 25px; }
+.faq-search-box-wrap .search-icon { position: absolute; left: 16px; top: 16px; color: #00b44e; font-size: 18px; } /* 돋보기 아이콘 초록색 체인지 */
+#faqSearchInput {
+    width: 100%; padding: 14px 16px 14px 48px; border: 2px solid #e2e8f0; border-radius: 10px;
+    font-size: 15px; outline: none; transition: all 0.2s; box-sizing: border-box;
+}
+#faqSearchInput:focus { border-color: #00b44e; box-shadow: 0 0 0 4px rgba(0, 180, 78, 0.15); } /* 검색창 클릭 시 초록빛 네온 불빛 효과 */
+
+/* 아코디언 리스트 디자인 */
+.faq-list { max-height: 400px; overflow-y: auto; padding-right: 5px; }
+.faq-item { border-bottom: 1px solid #f1f5f9; margin-bottom: 5px; }
+.faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 10px; cursor: pointer; transition: background 0.2s; border-radius: 8px;
+}
+.faq-question:hover { background-color: #f8fafc; }
+.faq-q-text { font-size: 15px; font-weight: 600; color: #334155; line-height: 1.4; }
+.faq-question .arrow-icon { color: #94a3b8; transition: transform 0.2s; }
+
+/* 아코디언 답변창 스르륵 열리는 효과 */
+.faq-answer {
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+    background-color: #f8fafc; border-radius: 8px; margin: 0 5px;
+}
+.faq-answer p { padding: 15px; margin: 0; font-size: 14px; color: #475569; line-height: 1.6; }
+
+/* ===================================================
+   🟢 아코디언 활성화 상태 스펙 (보라색 수거 완결)
+=================================================== */
+.faq-item.active .faq-answer { max-height: 200px; transition: max-height 0.3s ease-in; }
+.faq-item.active .faq-q-text { color: #00b44e; } /* ⭐ 클릭 시 질문 색상이 보테가 그린으로 변신! */
+.faq-item.active .arrow-icon { transform: rotate(180deg); color: #00b44e; } /* ⭐ 화살표도 보테가 그린으로 회전! */
 </style>
 
 </head>
@@ -197,6 +310,179 @@ body {
   <a class="sub-item" onclick="showPage('star18')">18. 자녀10대질환</a>
   <a class="sub-item" onclick="showPage('star19')">19. 11대특정감염병</a>
   <a class="sub-item" onclick="showPage('star20')">20. 선천기형, 염색체</a>
+</div>
+<div class="sidebar-bottom-menu">
+    <hr class="sidebar-divider">
+    <div class="faq-search-menu" onclick="openFaqModal()">
+        <i class="fa-regular fa-comments-question nav-icon"></i>
+        <span class="nav-text">자주 묻는 질문 (FAQ)</span>
+    </div>
+</div>
+
+<div id="faqModal" class="faq-modal">
+    <div class="faq-modal-content">
+        <div class="faq-modal-header">
+            <h2>❓ FAQ 검색 지원</h2>
+            <span class="faq-modal-close" onclick="closeFaqModal()">&times;</span>
+        </div>
+        
+        <div class="faq-search-box-wrap">
+            <i class="fa-regular fa-magnifying-glass search-icon"></i>
+            <input type="text" id="faqSearchInput" onkeyup="searchFaq()" placeholder="궁금한 키워드를 입력하세요 (예: 보수교육, 모니터링, 직업)...">
+        </div>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 금감원 "모집종사자 교육등에 관한 지침"에 의거 보수교육 미수료에 따른 모집정지 상태입니다. 영업교육파트에 문의하시기 바랍니다. 라는 문구가 뜹니다.</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>사용인의 보수교육 미수료로 뜨는 문구로 <b>보수교육 수료</b>후 수료증을 총무님통해 원수사 총무님께 전달하여 정지해제처리 필요.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 장애인의 모니터링 방법이 궁금해요!</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>모니터링은 휴대폰이 본인명의라면<b>모바일</b>로 가능하고 혹은<b>장애인등록증</b> 첨부해서 <b>서면</b>으로도 가능합니다. 이 경우에는 완전판매신청서에 서명하고 있는 사진을 찍어서 추가로 첨부해야합니다. </p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 모바일 가입제안서 비밀번호는 뭔가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>모바일 가입제안서 비밀번호는 <b>계약자</b>의 <b>생년월일 6자리</b>입니다. </p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 외국인은 등록증만 있으면 가입이 가능한가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>외국인등록증 발급일 기준 <b>국내체류 3개월</b>이상 경과 후 가입 가능하며, 가입 가능한 비자코드는 인수가이드북을 통해 확인해주세요. (단기체류 또는 임시체류자격 가입불가)</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 외국인 실손보험 설계 시 필요한 서류는 무엇인가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p><b>외국인등록사실증명</b> 또는 <b>건강보험 가입증명서</b> 스캔 후 심사 필요</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 펫보험 설계 시, 소유주와 계약자가 달라도 되나요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p><b>동일</b>해야 합니다.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. "피보험자의 이륜차 부담보 미가입건이 존재하는 계약으로, 전자서명으로 진행하실 수 없습니다." 라는 문구가 떠요.</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p><b>전자서명</b>: 기존계약 이륜차 부담보 배서 후 진행 <br><b>지류계약</b>: 이륜차 부담보 일괄동의서 + 청약서 스캔</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. MCAA 여부를 추후 배서할 수도 있나요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p><b>가능</b>합니다.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. ICIS에서 한의병명이라는 상병이 딸려와요.</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>한의진료를 받은 경우이므로, <b>정확</b>한 <b>병명</b>을 확인하여 고지하셔야 합니다.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 당·타사의 상병 날짜가 다르게 나오는 이유는 무엇인가요? </span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>당사와 타사의 <b>질문서</b> 내용이 다른 경우입니다. <br> (예: 간편은 입원, 수술/표준체는 입원,수술,통원)</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 가전제품 고장수리비용 자부담이 있나요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p><b>2만원</b>입니다. <br>(면책 60일, 10년이내 가전, 정식A/S센터만 가능)</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 가족일상배상책임 자부담은 얼마인가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>누수 제외 <b>20만원, 손해액의 10% 중 큰 금액</b><br>누수 <b>50만원, 손해액의 10% 중 큰 금액</b><br>누수 면책기간 90일</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 태아보험은 몇 주부터 가입이 가능한가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>병원진료를 통하여 <b>출산예정일</b> 확인 후 가입 가능합니다. </p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 인공수정 단태아는 어떤 서류가 필요한가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p>태아 및 산모의 이상 또는 이상 의심소견이 있는지 <b>확인</b> 후 <b>고지</b>, 서류심사대상 아님.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question" onclick="toggleAccordion(this)">
+        <span class="faq-q-text">Q. 펫보험 설계 시 필요한 정보는 무엇인가요?</span>
+        <i class="fa-regular fa-chevron-down arrow-icon"></i>
+    </div>
+    <div class="faq-answer">
+        <p><b>동물등록증, 정면사진</b>이 필요합니다. <br>(미등록 시: 이름, 생년월일, 성별, 중성화여부, 종, 정면사진)</p>
+    </div>
+</div>
+        </div>
+    </div>
 </div>
 </div>
 
@@ -12234,6 +12520,61 @@ function highlightPageTextNodes(node, keyword) {
             highlightPageTextNodes(children[i], keyword);
         }
     }
+}
+// 1. FAQ 모달 팝업 열기
+function openFaqModal() {
+    const modal = document.getElementById('faqModal');
+    modal.style.display = 'flex';
+    document.getElementById('faqSearchInput').focus(); // 켜지자마자 검색창에 포커스 자동 탑재
+}
+
+// 2. FAQ 모달 팝업 닫기
+function closeFaqModal() {
+    document.getElementById('faqModal').style.display = 'none';
+}
+
+// 3. 바깥 어두운 영역 클릭해도 팝업 닫히게 센스 부여
+window.onclick = function(event) {
+    const modal = document.getElementById('faqModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// 4. 아코디언 토글 제어 (누르면 챡 열리고, 다른 거 누르면 기존 거 닫힘)
+function toggleAccordion(element) {
+    const currentItem = element.parentElement;
+    const isAlreadyActive = currentItem.classList.contains('active');
+    
+    // 기존에 열려있던 다른 항목들 다 닫아주기 (깔끔함 유지)
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // 내가 누른 게 꺼져있었다면 활성화!
+    if (!isAlreadyActive) {
+        currentItem.classList.add('active');
+    }
+}
+
+// 5. 실시간 초정밀 키워드 검색 필터링 엔진
+function searchFaq() {
+    const input = document.getElementById('faqSearchInput');
+    const filter = input.value.toLowerCase().trim();
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const questionText = item.querySelector('.faq-q-text').innerText.toLowerCase();
+        const answerText = item.querySelector('.faq-answer').innerText.toLowerCase();
+        
+        // 질문이나 답변 내용 중에 검색어가 포함되어 있다면 보여주고, 없으면 숨김!
+        if (questionText.includes(filter) || answerText.includes(filter)) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+            item.classList.remove('active'); // 숨겨지는 건 아코디언도 닫기
+        }
+    });
 }
 </script>
 
