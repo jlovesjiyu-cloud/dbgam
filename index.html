@@ -3831,174 +3831,308 @@ body {
 
 <div id="lineup" class="page">
 <h2>DB손해보험 상품 라인업</h2>
-<p><style>
-.lineup-table {
-width: 100%;
-border-collapse: collapse;
-font-size: 13px;
-line-height: 1.5;
-font-family: 'Noto Sans KR', sans-serif;
-}
-.lineup-table th {
-background-color: #555555;
-color: #ffffff;
-font-weight: bold;
-text-align: center;
-padding: 12px 8px;
-border: 1px solid #dddddd;
-}
-.lineup-table td {
-padding: 10px 8px;
-border: 1px solid #dddddd;
-vertical-align: middle;
-}
-.lineup-table .center {
-text-align: center;
-}
-.lineup-table .category {
-font-weight: bold;
-color: #114d23;
-background-color: #f4fbf6;
-}
-.lineup-table .product-name {
-font-weight: bold;
-}
-.lineup-table .green-text {
-color: #114d23;
-font-weight: bold;
-}
 
+<style>
+    .db-product-container {
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 20px auto !important;
+        padding: 0 10px !important;
+        font-family: 'Pretendard', 'Noto Sans KR', sans-serif !important;
+    }
+    
+    .db-product-title {
+        font-size: 22px !important;
+        font-weight: 800 !important;
+        color: #1e293b !important;
+        margin-bottom: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    
+    /* 왼쪽 세로 포인트 바에 세련된 보테가 그린 포인트 장착 */
+    .db-product-title::before {
+        content: '' !important;
+        display: inline-block !important;
+        width: 6px !important;
+        height: 22px !important;
+        background-color: #00b44e !important; 
+        border-radius: 3px !important;
+    }
+
+    .db-table-wrapper {
+        width: 100% !important;
+        overflow-x: auto !important; 
+        border-radius: 12px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+
+    /* 💡 [정렬&디자인 핵심] .lineup-table 이름으로 모든 연동 정상화 */
+    .lineup-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        text-align: center !important; /* 가로 정중앙 */
+        background-color: #ffffff !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        letter-spacing: -0.3px !important;
+    }
+
+    /* 🟢 테이블 상단 헤더 영역 보테가 테마 세팅 */
+    .lineup-table th {
+        background-color: #f0fdf4 !important; /* 화사하고 투명한 연초록 에메랄드 배경 */
+        color: #166534 !important;            
+        font-weight: 700 !important;
+        padding: 14px 16px !important;
+        border-bottom: 2px solid #00b44e !important; /* 하단 찐한 보테가 그린 테두리 */
+        border-right: 1px solid #d1fae5 !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
+    
+    .lineup-table th:last-child {
+        border-right: none !important;
+    }
+
+    /* 🟢 본문 셀 데이터 사방 정중앙 강제 고정 및 부드러운 경계선 */
+    .lineup-table td {
+        padding: 14px 16px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        border-right: 1px solid #f1f5f9 !important;
+        color: #334155 !important;
+        vertical-align: middle !important; /* 세로 정중앙 */
+        text-align: center !important;     /* 가로 정중앙 */
+    }
+    
+    .lineup-table td:last-child {
+        border-right: none !important;
+    }
+
+    /* 상품군 그룹 컬러 세팅 (차분하고 은은한 그린 배경 패널) */
+    .db-highlight-group { 
+        font-weight: 700 !important; 
+        color: #166534 !important; 
+        background-color: #f4fbf6 !important; 
+    }
+    
+    /* 중요 상품명 800 두께감 + 보테가그린 폰트 스펙 주입 */
+    .db-product-name { 
+        font-weight: 800 !important; 
+        color: #00b44e !important; 
+    } 
+
+    /* 행(Row)에 마우스 올렸을 때 고급스러운 하이라이트 인터랙션 효과 */
+    .lineup-table tr:hover td {
+        background-color: #f8fafc !important;
+    }
 </style>
 
-<table class="lineup-table">
-<thead>
-<tr>
-<th>상품군</th>
-<th>상품명</th>
-<th>연령</th>
-<th colspan="2">상품구조</th>
-<th>납입면제</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="6" class="center category">간편</td>
-<td rowspan="2" class="product-name center">나에게맞춘 더좋은<br>초경증 간편보험</td>
-<td rowspan="2" class="center">15세<br>~90세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td rowspan="2">상해/질병 80% 후유장해, 암, 뇌졸중, 급성심근경색</td>
-</tr>
-<tr>
-<td class="center">갱신형<br>10~30년</td>
-<td class="center">무해지<br>일반해지</td>
-</tr>
-<tr>
-<td rowspan="2" class="product-name center">나에게맞춘<br><span class="green-text">고당지</span> 간편보험</td>
-<td rowspan="2" class="center">15세<br>~90세</td>
-<td class="center">세만기</td>
-<td class="center">무해지</td>
-<td rowspan="2">상해/질병 80% 후유장해, 암, 뇌졸중, 급성심근경색, 중대한특정상해수술</td>
-</tr>
-<tr>
-<td class="center">갱신형 10~30년</td>
-<td class="center">무해지</td>
-</tr>
-<tr>
-<td rowspan="2" class="product-name center">나에게맞춘<br>간편건강보험</td>
-<td rowspan="2" class="center">15세<br>~90세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td rowspan="2">상해/질병 80% 후유장해, 암, 뇌졸중, 급성심근경색</td>
-</tr>
-<tr>
-<td class="center">갱신형<br>10~30년</td>
-<td class="center">무해지<br>일반해지</td>
-</tr>
+<div class="db-product-container">
+    <div class="db-product-title">DB손해보험 상품 라인업 (26.06.01)</div>
+    
+    <div class="db-table-wrapper">
+        <table class="lineup-table" align="center">
+            <thead>
+                <tr>
+                    <th>상품군</th>
+                    <th>상품명</th>
+                    <th>연령</th>
+                    <th>상품구조</th>
+                    <th>해지종류</th>
+                    <th>납입면제</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="4">간편</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="4">나에게맞춘<br>더좋은<br>초경증 간편보험</td>
+                    <td style="text-align: center !important;" rowspan="2">15세<br>~90세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="4">상해/질병 80% 후유장해,<br>암, 뇌졸중, 급성심근경색</td>
+                    <td rowspan="4">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;" rowspan="2">15세<br>~90세</td>
+                    <td style="text-align: center !important;" rowspan="2">갱신형<br>10~30년</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="2">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="2">간편</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="2">나에게맞춘<br>고당지 간편보험</td>
+                    <td style="text-align: center !important;" rowspan="2">15세<br>~90세</td>
+                    <td style="text-align: center !important;">세만기</td>
+                    <td style="text-align: center !important;" rowspan="2">무해지</td>
+                    <td rowspan="2">상해/질병 80% 후유장해,<br>암, 뇌졸중, 급성심근경색<br>중대한특정상해수술</td>
+                    <td rowspan="2">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">갱신형 10~30년</td>
+                </tr>
 
-<tr>
-<td rowspan="4" class="center category">건강<br>고지</td>
-<td class="product-name center">건강할때가입하는<br>행복플러스</td>
-<td class="center">41세<br>~75세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td>상해/질병 80%후유장해, 암, 뇌졸중, 심근경색, 3대말기질환, 뇌혈관/허혈심장 수술</td>
-</tr>
-<tr>
-<td class="product-name center">건강할때준비하는<br>행복케어</td>
-<td class="center">40세<br>~75세</td>
-<td class="center">갱신형<br>10~30년</td>
-<td class="center">무해지</td>
-<td>상해/질병 80%후유장해, 암, 뇌졸중, 심근경색, 3대말기질환, 뇌혈관/허혈심장 수술, 당뇨합병증, 양성뇌종양</td>
-</tr>
-<tr>
-<td rowspan="2" class="product-name center">건강할때가입하는<br><span class="green-text">청춘어람</span></td>
-<td rowspan="2" class="center green-text">10세<br>~50세</td>
-<td class="center">세만기</td>
-<td class="center">무해지/<br>일반해지</td>
-<td>
-<strong>[10~40세]</strong> 상해/질병 50%후유장해, 암, 뇌혈관, 허혈심장질환, 5대난치성질환<br>
-<strong>[41~50세]</strong> 상해/질병 50%후유장해, 암, 뇌졸중, 심근경색, 5대난치성질환
-</td>
-</tr>
-<tr>
-<td class="center">갱신형<br>10~30년</td>
-<td class="center">무해지</td>
-<td>상해/질병 50%후유장해, 암, 뇌혈관, 허혈심장질환, 5대난치성질환, <span class="green-text">만성당뇨합병증, 양성뇌종양</span></td>
-</tr>
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="4">간편</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="4">나에게맞춘<br>간편건강보험</td>
+                    <td style="text-align: center !important;" rowspan="4">15세<br>~90세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="4">상해/질병 80% 후유장해,<br>암, 뇌졸중, 급성심근경색</td>
+                    <td rowspan="4">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;" rowspan="2">갱신형<br>10~30년</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="2">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
 
-<tr>
-<td rowspan="4" class="center category">건강체</td>
-<td rowspan="4" class="product-name center">참좋은행복플러스</td>
-<td rowspan="2" class="center">15세<br>~40세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td rowspan="2">상해/질병 50%후유장해, 암, 뇌혈관, 허혈심장질환, 3대말기질환, 만성신부전, 당뇨합병증, 간질환, 5대장기이식, 조혈모이식, 각막이식</td>
-</tr>
-<tr>
-<td class="center">갱신형 10~30년</td>
-<td class="center">일반해지</td>
-</tr>
-<tr>
-<td rowspan="2" class="center">41세<br>~75세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td rowspan="2">상해/질병 80%후유장해, 암, 뇌졸중, 심근경색, 3대말기질환, 뇌혈관/허혈심장 수술</td>
-</tr>
-<tr>
-<td class="center">갱신형 10~30년</td>
-<td class="center">일반해지</td>
-</tr>
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="2">건강<br>고지</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="2">건강할때가입하는<br>행복플러스</td>
+                    <td style="text-align: center !important;" rowspan="2">41세<br>~75세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="2">상해/질병 80%후유장해<br>암, 뇌졸중, 심근경색, 3대말기질환,<br>뇌혈관/허혈심장 수술</td>
+                    <td rowspan="2">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
 
-<tr>
-<td rowspan="5" class="center category">어린이/<br>자녀</td>
-<td rowspan="2" class="product-name center">청춘어람플러스</td>
-<td rowspan="2" class="center">10세<br>~40세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td rowspan="2">상해/질병 50%후유장해, 암, 뇌혈관, 허혈심장질환, 5대난치성질환</td>
-</tr>
-<tr>
-<td class="center">갱신형 20년</td>
-<td class="center">일반해지</td>
-</tr>
-<tr>
-<td rowspan="3" class="product-name center">아이러브플러스</td>
-<td rowspan="3" class="center">0세<br>~15세</td>
-<td class="center">세만기</td>
-<td class="center">무해지<br>일반해지</td>
-<td rowspan="3">상해/질병 50%후유장해, 암, 뇌혈관, 허혈심장질환, 특정3대심장질환, 5대난치성질환</td>
-</tr>
-<tr>
-<td class="center">30세만기</td>
-<td class="center">일반해지</td>
-</tr>
-<tr>
-<td class="center">갱신형 20년</td>
-<td class="center">일반해지</td>
-</tr>
-</tbody>
-</table></p>
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;">건강<br>고지</td>
+                    <td class="db-product-name" style="text-align: center !important;">건강할때준비하는<br>행복케어</td>
+                    <td style="text-align: center !important;">40세<br>~75세</td>
+                    <td style="text-align: center !important;">갱신형<br>10~30년</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td>상해/질병 80%후유장해<br>암, 뇌졸중, 심근경색, 3대말기질환,<br>뇌혈관/허혈심장 수술, 당뇨합병증,<br>양성뇌종양</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="3">건강<br>고지</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="3">건강할때가입하는<br>청춘어람</td>
+                    <td style="text-align: center !important;" rowspan="3">10세<br>~50세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;" rowspan="2">무해지/<br>일반해지</td>
+                    <td>[10~40세]<br>상해/질병 50%후유장해, 암, 뇌혈관,<br>허혈심장질환, 5대난치성질환</td>
+                    <td rowspan="3">-</td>
+                </tr>
+                <tr>
+                    <td>[41~50세]<br>상해/질병 50%후유장해, 암, 뇌졸중,<br>심근경색, 5대난치성질환</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">갱신형<br>10~30년</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td>상해/질병 50%후유장해, 암, 뇌혈관,<br>허혈심장질환, 5대난치성질환,<br>만성당뇨병합병증, 양성뇌종양</td>
+                </tr>
+
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="3">건강<br>고지</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="3">건강할때든든한<br>종합</td>
+                    <td style="text-align: center !important;" >15세<br>~24세</td>
+                    <td style="text-align: center !important;">30년 갱신</td>
+                    <td style="text-align: center !important;" rowspan="3">무해지</td>
+                    <td>상해질병50%<br>암/뇌혈관<br>허혈심장질환<br>특정3대심장질환</td>
+                    <td style="text-align: center !important;" rowspan="3">고혈압, 고지혈증<br>당뇨, 통풍<br><br>미진단시<br><br>보험료 납입 없이<br>100세까지 기간연장</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">25세<br>~40세</td>
+                    <td style="text-align: center !important;">55세 갱신<br>(갱신주기 30년)</td>
+                    <td>상해질병50%<br>암/뇌혈관<br>허혈심장질환</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">41세<br>~60세</td>
+                    <td style="text-align: center !important;">15/20년 갱신</td>
+                    <td>상해질병80%<br>암/뇌졸중<br>급성심근경색</td>
+                </tr>
+
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="6">건강체</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="6">참좋은행복플러스</td>
+                    <td style="text-align: center !important;" rowspan="3">15세<br>~40세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="3">상해/질병 50%후유장해, 암, 뇌혈관, <br>허혈심장질환, 3대말기질환, 만성신부전,<br>당뇨합병증, 간질환, 5대장기이식, <br>조혈모이식, 각막이식</td>
+                    <td rowspan="6">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">갱신형 10~30년</td>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;" rowspan="3">41세<br>~75세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="3">상해/질병 80%후유장해<br>암, 뇌졸중, 심근경색, 3대말기질환, <br>뇌혈관/허혈심장 수술</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">갱신형 10~30년</td>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="3">어른이/<br>자녀</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="3">청춘어람플러스</td>
+                    <td style="text-align: center !important;" rowspan="3">10세<br>~40세</td>
+                    <td style="text-align: center !important;" rowspan="2">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="3">상해/질병 50%후유장해, 암, 뇌혈관,<br>허혈심장질환, 5대난치성질환</td>
+                    <td rowspan="3">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">갱신형 20년</td>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+
+                <tr>
+                    <td class="db-highlight-group" style="text-align: center !important;" rowspan="4">어른이/<br>자녀</td>
+                    <td class="db-product-name" style="text-align: center !important;" rowspan="4">아이러브플러스</td>
+                    <td style="text-align: center !important;" rowspan="4">0세<br>~15세</td>
+                    <td style="text-align: center !important;" rowspan="3">세만기</td>
+                    <td style="text-align: center !important;">무해지</td>
+                    <td rowspan="4">상해/질병 50%후유장해, 암, 뇌혈관,<br>허혈심장질환, 특정3대심장질환,<br>5대난치성질환</td>
+                    <td rowspan="4">-</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">30세만기</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center !important;">갱신형 20년</td>
+                    <td style="text-align: center !important;">일반해지</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 
 <div id="q1" class="page">
